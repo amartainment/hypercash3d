@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpillCount : MonoBehaviour
 {
-    private static int SpillCounter = 0;
+    public static int SpillCounter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class SpillCount : MonoBehaviour
         if(other.tag == "Curry")
         {
             SpillCounter++;
-            Debug.Log(SpillCounter);
+            //Debug.Log(SpillCounter);
         }
     }
 
