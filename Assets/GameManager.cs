@@ -11,18 +11,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameIsOver = false;
+        
     }
 
     private void EndGame()
     {
-        if(GameIsOver == false)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
+        SceneManager.LoadScene("GameOver");
     }
 
     private void WinGame()
+    {
+        SceneManager.LoadScene("YouWin");
+    }
 
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         {
             EndGame();
         }
-        else if(Countdown.TimeLeft == 0 && SpillCount.SpillCounter < 5)
+        else if(Countdown.TimeLeft == 0)
         {
             WinGame();
         }

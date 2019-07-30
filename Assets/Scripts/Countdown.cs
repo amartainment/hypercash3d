@@ -7,12 +7,13 @@ public class Countdown : MonoBehaviour
 {
     public Text CountDownText;
     public Image CountDownFill;
-    public static float TimeLeft = 30;
+    public static float TimeLeft;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        TimeLeft = 30;
         StartCoroutine(LoseTime());
         Time.timeScale = 1;
     }

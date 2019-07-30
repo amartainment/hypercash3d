@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SpillCount : MonoBehaviour
 {
-    public static int SpillCounter = 0;
+    public static int SpillCounter;
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpillCounter = 0;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +16,7 @@ public class SpillCount : MonoBehaviour
         if(other.tag == "Curry")
         {
             SpillCounter++;
-            //Debug.Log(SpillCounter);
+            Debug.Log(SpillCounter);
         }
     }
 
