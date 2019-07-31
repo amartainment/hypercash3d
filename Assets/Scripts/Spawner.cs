@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject Waterdrop;
-
+    public int numberOfSpawns;
     private int Number = 0;
 
 
@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        while (Number < 5)
+        while (Number < numberOfSpawns)
         {
             Instantiate(Waterdrop, transform.position, Quaternion.identity);
             Number++;
