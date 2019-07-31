@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool GameIsOver;
+    public GameObject winCanvas;
+    public GameObject loseCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +18,16 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
-        SceneManager.LoadScene("GameOver");
+        Time.timeScale = 0;
+        loseCanvas.active = true;
+        //SceneManager.LoadScene("GameOver");
     }
 
     private void WinGame()
     {
-        SceneManager.LoadScene("YouWin");
+        Time.timeScale = 0;
+        winCanvas.active = true;
+       // SceneManager.LoadScene("YouWin");
     }
 
 

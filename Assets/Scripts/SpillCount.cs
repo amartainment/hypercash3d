@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SpillCount : MonoBehaviour
 {
     public static int SpillCounter;
+    public feedbackHandler SpillFeedback;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,9 @@ public class SpillCount : MonoBehaviour
         {
             SpillCounter++;
             Debug.Log(SpillCounter);
+            SpillFeedback.currySpilled();
+            SpillFeedback.flashWarningSign();
+            
         }
     }
 
