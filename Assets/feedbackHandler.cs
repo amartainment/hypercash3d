@@ -11,7 +11,7 @@ public class feedbackHandler : MonoBehaviour
     AudioSource myAudio;
     public AudioClip dripSound;
     public GameObject warningIcon;
-    public Slider spillSlider;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -32,21 +32,13 @@ public class feedbackHandler : MonoBehaviour
         Debug.Log("spilled");
         myRenderer.material = negativeFeedback;
         myAudio.PlayOneShot(dripSound);
-        spillSlider.value += 1;
+        
         yield return new WaitForSeconds(0.5f);
         myRenderer.material = tableTop;
        
     }
 
-    IEnumerator warningSign()
-    {
-
-        warningIcon.SetActive(true);
-            yield return new WaitForSeconds(1f);
-        warningIcon.SetActive(false);
-          
-        
-    }
+ 
 
     public void currySpilled()
     {
@@ -55,6 +47,6 @@ public class feedbackHandler : MonoBehaviour
 
     public void flashWarningSign()
     {
-        StartCoroutine("warningSign");
+      
     }
 }
