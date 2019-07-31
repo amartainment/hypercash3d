@@ -18,6 +18,7 @@ public class SpillCount : MonoBehaviour
         if(other.tag == "Curry")
         {
             SpillCounter++;
+            GameObject.Find("SpillFeedback").GetComponent<SpillFeedback>().SpillVisualFeedback();
             Debug.Log(SpillCounter);
             SpillFeedback.currySpilled();
             SpillFeedback.flashWarningSign();
