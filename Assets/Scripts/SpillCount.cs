@@ -21,7 +21,7 @@ public class SpillCount : MonoBehaviour
             GameObject.Find("SpillFeedback").GetComponent<SpillFeedback>().SpillVisualFeedback();
             Debug.Log(SpillCounter);
             SpillFeedback.currySpilled();
-            SpillFeedback.flashWarningSign();
+           // SpillFeedback.flashWarningSign();
             
         }
     }

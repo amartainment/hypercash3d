@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpillFeedback : MonoBehaviour
 {
+    public int maxSpillsAllowed;
 
     public GameObject SpillSprite;
     
@@ -15,10 +16,11 @@ public class SpillFeedback : MonoBehaviour
 
     public void SpillVisualFeedback()
     { 
-    if(SpillCount.SpillCounter > 0 && SpillCount.SpillCounter <= 6)
+    if(SpillCount.SpillCounter > 0 && SpillCount.SpillCounter <= maxSpillsAllowed)
         {
+            float scaleStep = 20 / maxSpillsAllowed;
             SpillSprite.SetActive(true);
-            SpillSprite.transform.localScale = SpillSprite.transform.localScale + new Vector3(3, 0, 0);
+            SpillSprite.transform.localScale = SpillSprite.transform.localScale + new Vector3(scaleStep, 0, 0);
         }
     }
 

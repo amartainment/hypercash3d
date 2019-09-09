@@ -29,12 +29,11 @@ public class feedbackHandler : MonoBehaviour
     IEnumerator spillCurry()
     {
       
-        Debug.Log("spilled");
-        myRenderer.material = negativeFeedback;
+       
         myAudio.PlayOneShot(dripSound);
         
         yield return new WaitForSeconds(0.5f);
-        myRenderer.material = tableTop;
+        
        
     }
 

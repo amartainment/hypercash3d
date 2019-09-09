@@ -23,4 +23,12 @@ public class Restart : MonoBehaviour
         SceneManager.LoadScene("Level2");
     }
 
+    public void loadScene(string sceneName)
+    {
+        Time.timeScale = 1;
+        winCanvas.SetActive(false);
+        loseCanvas.SetActive(false);
+        SceneManager.LoadScene(sceneName);
+    }
+
 }

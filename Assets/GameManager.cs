@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private bool GameIsOver;
     public GameObject winCanvas;
     public GameObject loseCanvas;
+    int maxSpill = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SpillCount.SpillCounter > 5)
+        maxSpill = GameObject.Find("SpillFeedback").GetComponent<SpillFeedback>().maxSpillsAllowed;
+        if(SpillCount.SpillCounter > maxSpill)
         {
             EndGame();
         }
